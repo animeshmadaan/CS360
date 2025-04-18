@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>WebGL Load Object Mesh</title>
+    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
+    <script type="text/javascript" src="scene.js"></script>
+  </head>
+
+  <body onload="webGLStart();">
+    <canvas id="scene" style="border: none" width="600" height="600"></canvas>
+    <div class="controls">
+      <div class="shading-controls">
+          <h3>Shading Mode:</h3>
+          <button onclick="reflectFlag = false; shadowFlag = false; drawScene();" id="phong">Phong</button>
+          <button onclick="reflectFlag = true; shadowFlag = false; drawScene();" id="phong-reflection">Phong+Reflection</button>
+          <button onclick="reflectFlag = false; shadowFlag = true; drawScene();" id="phong-shadow">Phong+Shadow</button>
+          <button onclick="reflectFlag = true; shadowFlag = true; drawScene();" id="phong-shadow-reflection">Phong+Shadow+Reflection</button>
+      </div>
+      <br />
+      <div class="slider-container" style="display: flex; align-items: center; margin-bottom: 10px;">
+        <label class="slider-label" for="lightSlider" style="margin-right: 10px;">Move Light:</label>
+        <input type="range" id="lightSlider" class="slider" min="-5.0" max="5.0" step="0.1" value="-2.0" 
+        style="width: 200px; height: 5px; -webkit-appearance: none; appearance: none; background-color: #0996e2; border-radius: 5px; outline: none;"/>
+      </div>
+      <br />
+  </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>3D Shading</title>
+    <meta charset="UTF-8" />
+    <script type="text/javascript" src="glMatrix-0.9.5.min.js"></script>
+    <script type="text/javascript" src="scene.js"></script>
+    <style>
+      body {
+        margin: 50px;
+      }
+      #controls {
+        margin-top: 20px;
+      }
+      .slider-container {
+        margin-bottom: 15px;
+      }
+      .slider-label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .slider {
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body onload="webGLStart();">
+    <canvas id="scene" width="1200" height="400"></canvas>
+    
+    <!-- Add labels for each shading type -->
+    <div id="viewport-labels" style="display: flex; justify-content: space-between; width: 1200px; margin-top: 10px;">
+      <div style="flex: 1; text-align: center; font-weight: bold;">Per-Face Shading</div>
+      <div style="flex: 1; text-align: center; font-weight: bold;">Gouraud Shading (Per-Vertex)</div>
+      <div style="flex: 1; text-align: center; font-weight: bold;">Phong Shading (Per-Fragment)</div>
+    </div>
+    
+  
+    <!-- Controls Section for sliders -->
+    <!-- Controls Section for sliders -->
+    <div id="controls">
+      <div class="slider-container" style="display: flex; align-items: center; margin-bottom: 10px;">
+        <label class="slider-label" for="lightSlider" style="margin-right: 10px;">Control Light Position:</label>
+        <input type="range" id="lightSlider" class="slider" min="-10.0" max="10.0" step="0.1" value="5.0" 
+        style="width: 200px; height: 5px; -webkit-appearance: none; appearance: none; background-color: #0996e2; border-radius: 5px; outline: none;"/>
+      </div>
+      <div class="slider-container" style="display: flex; align-items: center; margin-bottom: 10px;">
+        <label class="slider-label" for="zoomSlider" style="margin-right: 10px;">Control Camera Zoom:</label>
+        <input type="range" id="zoomSlider" class="slider" min="0.0" max="20.0" step="0.1" value="2.0" 
+              style="width: 200px; height: 5px; -webkit-appearance: none; appearance: none; background-color: #0996e2; border-radius: 5px; outline: none;"/>
+      </div>
+    </div>
+
+</div>
+
+  </body>  
+</html>
